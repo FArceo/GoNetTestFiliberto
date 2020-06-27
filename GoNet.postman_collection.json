@@ -1,0 +1,272 @@
+{
+	"info": {
+		"_postman_id": "42226b5f-afee-4cf4-9658-c9391aacabd3",
+		"name": "GoNet",
+		"description": "Colección para el examen de admición a GoNet",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "http://localhost:8080/auth",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n   \"id\" : \"\",\r\n   \"usr\" : \"usr1\",\r\n   \"pass\" : \"pass1\",\r\n   \"llave\": \"\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/auth",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"auth"
+					]
+				},
+				"description": "Autorización de un usuario, se proporciona un usuario válido y una contraseña válida, la respuesta regresa una llave que se tiene que utilizar para las siguientes peticiones"
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/auth/Llavedeautorización",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/auth/NBXxIOexUK",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"auth",
+						"NBXxIOexUK"
+					]
+				},
+				"description": "Sesrvicio utilizado para la validación de una llave en particular.\r\nSi es valida regresa el objeto completo, en caso contrario regresa null"
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/pelis/tt3896198/LlaveDeAutorizacion",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/pelis/tt3896198/NBXxIOexUK",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"pelis",
+						"tt3896198",
+						"NBXxIOexUK"
+					]
+				},
+				"description": "Consulta de una película en el sitio:\r\nhttp://www.omdbapi.com\r\npor id de película"
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/pelisName/Batman/Llavedeautorizacion",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/pelisName/Batman/NBXxIOexUK",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"pelisName",
+						"Batman",
+						"NBXxIOexUK"
+					]
+				},
+				"description": "Consulta de una película por titulo en el servidor\r\nhttp://www.omdbapi.com/"
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/mispelisAdd",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": " {\r\n\r\n    \"llave\" : \"NBXxIOexUK\",\r\n    \"mispelis\" : { \r\n       \"mi_puntuacion\": \"7.1\",\r\n        \"fecha_vista\": \"2020/02/01 11:20:00\",\r\n        \"mis_comentarios\": \"Pelicula violent\",\r\n        \"imdbID\": \"tt0096895\"\r\n    }\r\n }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/mispelisAdd",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"mispelisAdd"
+					]
+				},
+				"description": "Alta de una película en mi base de datos con los campos de\r\nmi puntuacion, la fecha en la que se vio, mis comentarios, y el id que tiene en el servidor http://www.omdbapi.com/"
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/mispslisDelete/tt0096895/llaveautenticaion",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/mispslisDelete/tt0096895/NBXxIOexUK",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"mispslisDelete",
+						"tt0096895",
+						"NBXxIOexUK"
+					]
+				},
+				"description": "Borrado de una pelicula por id del servidor\r\nhttp://www.omdbapi.com/\r\nen la base de datos local"
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/mispelis/llavedeautenticaion",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/mispelis/NBXxIOexUK",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"mispelis",
+						"NBXxIOexUK"
+					]
+				},
+				"description": "Consulta de las peliculas que di de alta en el servidor local."
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/mispelis/tt0096895/llavedeAutenticacion",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/mispelis/tt0096895/NBXxIOexUK",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"mispelis",
+						"tt0096895",
+						"NBXxIOexUK"
+					]
+				},
+				"description": "Consulta de una pelicula por la llave del servidor\r\nhttp://www.omdbapi.com/"
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/mispelisUpdate",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n     \"llave\" : \"NBXxIOexUK\",\r\n    \"mispelis\": {\r\n        \"mi_puntuacion\": \"8.5\",\r\n        \"fecha_vista\": \"2020/06/01 11:20:00\",\r\n        \"mis_comentarios\": \"Pelicula violenta no apta para niños\",\r\n        \"imdbID\": \"tt0096895\"\r\n    }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/mispelisUpdate",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"mispelisUpdate"
+					]
+				},
+				"description": "Actualización de una película en el servidor local"
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/joinId/tt0096895/Llavedeautorización",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/joinId/tt0096895/NBXxIOexUK",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"joinId",
+						"tt0096895",
+						"NBXxIOexUK"
+					]
+				},
+				"description": "Consula por id local + al sitio http://www.omdbapi.com/"
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/joinName/Batman/llavedeautenticaion",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/joinName/Batman/NBXxIOexUK",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"joinName",
+						"Batman",
+						"NBXxIOexUK"
+					]
+				},
+				"description": "Consulta de una pelicula por nombre en el servidor local +\r\nen el sitio http://www.omdbapi.com/"
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}
